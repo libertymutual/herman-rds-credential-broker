@@ -1,0 +1,8 @@
+# DATASOURCE
+datasource:
+  url: jdbc:mysql://${DB_HOST}:${DB_PORT}/${DB_NAME}?useSSL=true&requireSSL=true&verifyServerCertificate=false
+  databaseName: ${DB_NAME}
+  username: ${DB_USERNAME}
+  encryptedPassword: ${DB_PASSWORD}
+  host: ${DB_HOST}
+  driverClassName: com.mysql.jdbc.Driver

@@ -1,0 +1,13 @@
+#SPRING CLOUD CONFIG
+spring.cloud.config.enabled: false
+
+aws:
+  region: us-east-1
+
+credentials:
+  masterUsername: ${DB_USERNAME}
+  masterEncryptedPassword: ${DB_PASSWORD}
+  appUsername: ${DB_APP_USERNAME}
+  appEncryptedPassword: ${DB_APP_PASSWORD}
+  adminUsername: ${DB_ADMIN_USERNAME}
+  adminEncryptedPassword: ${DB_ADMIN_PASSWORD}
