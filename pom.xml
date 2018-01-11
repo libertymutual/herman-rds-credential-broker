@@ -66,9 +66,9 @@
 
 		<!-- KMS / SECRETS MGMT -->
 		<dependency>
-			<groupId>com.lmig.ci.lmb.aws</groupId>
-			<artifactId>lm-kms-spring-cloud</artifactId>
-			<version>BUILD5</version>
+			<groupId>org.zalando</groupId>
+			<artifactId>spring-cloud-config-aws-kms</artifactId>
+			<version>1.7</version>
 		</dependency>
 		<dependency>
 			<groupId>com.amazonaws</groupId>
