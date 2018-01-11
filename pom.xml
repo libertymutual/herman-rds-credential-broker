@@ -27,6 +27,24 @@
 		<awscli.version>1.11.209</awscli.version>
 	</properties>
 
+	<distributionManagement>
+		<repository>
+			<id>lmb-enclave-releases</id>
+			<name>LMB Release Repository</name>
+			<url>
+				https://repo.forge.lmig.com/content/repositories/lmb-enclave-releases/
+			</url>
+		</repository>
+
+		<snapshotRepository>
+			<id>lmb-enclave-snapshots</id>
+			<name>LMB Snapshot Repository</name>
+			<url>
+				https://repo.forge.lmig.com/content/repositories/lmb-enclave-snapshots/
+			</url>
+		</snapshotRepository>
+	</distributionManagement>
+
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
