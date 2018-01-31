@@ -32,15 +32,14 @@
 			<id>lmb-enclave-releases</id>
 			<name>LMB Release Repository</name>
 			<url>
-				https://repo.forge.lmig.com/content/repositories/lmb-enclave-releases/
+				https://repo.forge.lmig.com/java-releases/
 			</url>
 		</repository>
-
 		<snapshotRepository>
 			<id>lmb-enclave-snapshots</id>
 			<name>LMB Snapshot Repository</name>
 			<url>
-				https://repo.forge.lmig.com/content/repositories/lmb-enclave-snapshots/
+				https://repo.forge.lmig.com/java-snapshots/
 			</url>
 		</snapshotRepository>
 	</distributionManagement>
