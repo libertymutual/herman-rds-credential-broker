@@ -41,11 +41,11 @@ class PostgresCredentialBroker(
         testCredential(appCredential)
 
         if(credentialExists(adminCredential)){
-            LOG.info("Updating password for existing DB user ${appCredential.username} for admin use")
+            LOG.info("Updating password for existing DB user ${adminCredential.username} for admin use")
             updateCredential(adminCredential)
         }
         else{
-            LOG.info("Creating DB user ${appCredential.username} for administration to use")
+            LOG.info("Creating DB user ${adminCredential.username} for administration to use")
             createAdminUser()
         }
 
