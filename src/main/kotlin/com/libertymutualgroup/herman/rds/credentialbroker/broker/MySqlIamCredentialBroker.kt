@@ -1,6 +1,6 @@
-package com.lmig.ci.lmb.herman.rds.credentialbroker.broker
+package com.libertymutualgroup.herman.rds.credentialbroker.broker
 
-import com.lmig.ci.lmb.herman.rds.credentialbroker.config.DataSourceProperties
+import com.libertymutualgroup.herman.rds.credentialbroker.config.DataSourceProperties
 import org.slf4j.LoggerFactory
 import org.springframework.beans.factory.annotation.Qualifier
 import org.springframework.beans.factory.annotation.Value
@@ -9,22 +9,34 @@ import org.springframework.jdbc.core.JdbcTemplate
 import org.springframework.stereotype.Component
 
 
-/**
- * Created by n0200057 on 3/26/17.
+/*
+ * Copyright 2018 the original author or authors.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
 @Component
 @Profile("mysqliam")
 open class MySqlIamCredentialBroker(
-        val template: JdbcTemplate,
-        val dataSourceProperties: DataSourceProperties,
+        private val template: JdbcTemplate,
+        private val dataSourceProperties: DataSourceProperties,
         @Value("\${aws.region}")
         val region: String,
         @Qualifier("appCredential")
-        val appCredential: Credential,
+        private val appCredential: Credential,
         @Qualifier("adminCredential")
-        val adminCredential: Credential
+        private val adminCredential: Credential
 ) : CredentialBroker {
-    val LOG = LoggerFactory.getLogger(MySqlIamCredentialBroker::class.java)
+    private val LOG = LoggerFactory.getLogger(MySqlIamCredentialBroker::class.java)
 
     override fun brokerCredentials() {
         if(!credentialExists(appCredential)) {
@@ -51,7 +63,7 @@ open class MySqlIamCredentialBroker(
     }
 
     private fun credentialExists(credential: Credential): Boolean{
-        var query = "SELECT 1 FROM mysql.user WHERE user = '${credential.username}'"
+        val query = "SELECT 1 FROM mysql.user WHERE user = '${credential.username}'"
 
         return template.queryForList(query).size == 1
     }
