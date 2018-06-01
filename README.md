@@ -7,4 +7,4 @@ This project is a task that runs in the Herman ecosystem to setup users and cred
 TODO
 
 ## Contributing
-TODO
+See [CONTRIBUTING.md](https://github.com/libertymutual/herman-rds-credential-broker/blob/master/CONTRIBUTING.md)
