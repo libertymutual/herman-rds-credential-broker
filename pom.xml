@@ -12,9 +12,10 @@
 	<description>RDS Credential Broker for the Herman Platform</description>
 
 	<parent>
-		<groupId>com.lmig.ci.devdisc</groupId>
-		<artifactId>ciit-spring-boot-minimal-parent</artifactId>
-		<version>1.5.1-BUILD1</version>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.5.11.RELEASE</version>
+		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 
 	<properties>
@@ -26,23 +27,6 @@
 		<springcloud.version>Camden.SR6</springcloud.version>
 		<awscli.version>1.11.209</awscli.version>
 	</properties>
-
-	<distributionManagement>
-		<repository>
-			<id>lmb-enclave-releases</id>
-			<name>LMB Release Repository</name>
-			<url>
-				https://repo.forge.lmig.com/java-releases/
-			</url>
-		</repository>
-		<snapshotRepository>
-			<id>lmb-enclave-snapshots</id>
-			<name>LMB Snapshot Repository</name>
-			<url>
-				https://repo.forge.lmig.com/java-snapshots/
-			</url>
-		</snapshotRepository>
-	</distributionManagement>
 
 	<dependencyManagement>
 		<dependencies>
